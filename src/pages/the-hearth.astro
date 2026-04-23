@@ -1,0 +1,165 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Newsletter from '../components/Newsletter.astro';
+
+const title = 'The Hearth — Newsletter & Community | Stay at The Crossroads';
+const description = 'Join the Hearth. Stories, warmth, and the occasional secret from the Crossroads Inn, delivered to your inbox.';
+---
+
+<Layout title={title} description={description}>
+
+  <section class="section container">
+    <div class="content-narrow">
+
+      <div class="page-header">
+        <p class="eyebrow">Newsletter &amp; Community</p>
+        <h1>The Hearth</h1>
+        <p class="page-sub">
+          Pull up a chair. The fire is always lit.
+        </p>
+      </div>
+
+      <div class="hearth-image img-warm">
+        <img
+          src="/illustrations/hearth-gathering.svg"
+          alt="A circle of travelers gathered around a glowing hearth — warm light, mismatched chairs, the sound of stories"
+          width="1200" height="600"
+          loading="eager" decoding="async"
+        />
+      </div>
+
+      <div class="hearth-pitch">
+        <p>
+          The Hearth is where the inn's regulars gather. Not a mailing list — a
+          fireside. Stories that don't fit in the Ledger. Early looks at new
+          chapters. The occasional secret slipped under your door at midnight.
+        </p>
+        <p>
+          No spam. No schedule. Just whatever the fire inspires, whenever it
+          inspires it. And you can leave whenever you want — the door is always
+          open.
+        </p>
+      </div>
+
+      <Newsletter />
+
+      <div class="divider"></div>
+
+      <div class="hearth-what">
+        <h2>What you'll find by the fire</h2>
+        <div class="hearth-features">
+          <div class="card hearth-feature">
+            <h3>Early chapters</h3>
+            <p>Read new Crossroads Inn chapters before anyone else. First drafts, warm from the pen.</p>
+          </div>
+          <div class="card hearth-feature">
+            <h3>Stories from the inn</h3>
+            <p>Short pieces that don't fit in the books. Character moments. Quiet scenes. The soup recipe.</p>
+          </div>
+          <div class="card hearth-feature">
+            <h3>Reading recommendations</h3>
+            <p>Cozy fantasy, slice-of-life, comfort reads. What the keeper's been reading between guests.</p>
+          </div>
+          <div class="card hearth-feature">
+            <h3>Behind the door</h3>
+            <p>Notes on the writing process. Where the ideas came from. Why the inn has five roads.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="hearth-promise card" style="text-align: center;">
+        <h3>The Hearth Promise</h3>
+        <p>No spam. Ever. Unsubscribe with one click. Your email stays at the inn — we don't share it, sell it, or trade it for directions.</p>
+        <p class="hearth-promise-note"><em>The keeper keeps her word.</em></p>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .page-header {
+    text-align: center;
+    margin-bottom: var(--sp-xl);
+  }
+
+  .eyebrow {
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent-soft);
+    margin-bottom: var(--sp-xs);
+  }
+
+  .page-sub {
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 1.2rem;
+  }
+
+  .hearth-image {
+    margin-bottom: var(--sp-xxl);
+    aspect-ratio: 2 / 1;
+  }
+
+  .hearth-pitch {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: var(--sp-xxl);
+    text-align: center;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hearth-pitch p {
+    color: var(--text);
+    margin-bottom: var(--sp-lg);
+  }
+
+  .hearth-what h2 {
+    text-align: center;
+    margin-bottom: var(--sp-xl);
+  }
+
+  .hearth-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--sp-md);
+  }
+
+  .hearth-feature h3 {
+    color: var(--accent);
+    font-size: 1.1rem;
+    margin-bottom: var(--sp-sm);
+  }
+
+  .hearth-feature p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+
+  .hearth-promise {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .hearth-promise h3 {
+    color: var(--accent);
+    margin-bottom: var(--sp-md);
+  }
+
+  .hearth-promise p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+
+  .hearth-promise-note {
+    margin-top: var(--sp-md);
+    color: var(--accent-soft);
+  }
+</style>

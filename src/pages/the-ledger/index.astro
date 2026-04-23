@@ -1,0 +1,161 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const title = 'The Ledger — Stories from The Crossroads Inn | Stay at The Crossroads';
+const description = 'Stories, whispers, and truths left by travelers who passed through the Crossroads Inn.';
+
+const posts = (await getCollection('ledger'))
+  .filter(post => !post.data.draft)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<Layout title={title} description={description}>
+
+  <section class="section container">
+    <div class="content-narrow">
+
+      <div class="page-header">
+        <p class="eyebrow">Stories &middot; Whispers &middot; Truths</p>
+        <h1>The Ledger</h1>
+        <p class="page-sub">
+          Every traveler who passes through leaves something behind. A story.
+          A rumor. A truth they couldn't carry any further.
+        </p>
+      </div>
+
+      <div class="ledger-image img-warm">
+        <img
+          src="/illustrations/ledger-journal.svg"
+          alt="An open leather journal on a candlelit desk — ink-stained pages filled with travelers' stories"
+          width="1200" height="500"
+          loading="eager" decoding="async"
+        />
+      </div>
+
+      <div class="entries">
+        {posts.map(post => (
+          <article class="card entry">
+            <div class="entry-meta">
+              <time datetime={post.data.date.toISOString().split('T')[0]}>
+                {post.data.date.toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </time>
+              {post.data.tags.length > 0 && (
+                <span class="entry-tags">
+                  {post.data.tags.map(tag => (
+                    <span class="tag">{tag}</span>
+                  ))}
+                </span>
+              )}
+            </div>
+            <h2><a href={`/the-ledger/${post.slug}`}>{post.data.title}</a></h2>
+            <p class="entry-desc">{post.data.description}</p>
+            <a href={`/the-ledger/${post.slug}`} class="btn-text">Read this entry</a>
+          </article>
+        ))}
+      </div>
+
+      {posts.length === 0 && (
+        <div class="card" style="text-align: center; padding: var(--sp-xxl);">
+          <p class="empty-note">The ledger is open, but no one has written in it yet.</p>
+          <p class="empty-note">Check back soon.</p>
+        </div>
+      )}
+
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .page-header {
+    text-align: center;
+    margin-bottom: var(--sp-xl);
+  }
+
+  .eyebrow {
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent-soft);
+    margin-bottom: var(--sp-xs);
+  }
+
+  .page-sub {
+    color: var(--text-muted);
+    font-style: italic;
+    max-width: 50ch;
+    margin: 0 auto;
+  }
+
+  .ledger-image {
+    margin-bottom: var(--sp-xxl);
+    aspect-ratio: 12 / 5;
+  }
+
+  .entries {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-lg);
+  }
+
+  .entry {
+    padding: var(--sp-xl);
+  }
+
+  .entry-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-md);
+    margin-bottom: var(--sp-sm);
+  }
+
+  .entry-meta time {
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  .entry-tags {
+    display: flex;
+    gap: var(--sp-xs);
+  }
+
+  .tag {
+    font-family: var(--font-ui);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent-soft);
+    background: var(--hearth-shadow);
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+
+  .entry h2 {
+    font-size: 1.4rem;
+    margin-bottom: var(--sp-sm);
+  }
+  .entry h2 a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .entry h2 a:hover { color: var(--accent-soft); }
+
+  .entry-desc {
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 0.95rem;
+    margin-bottom: var(--sp-md);
+  }
+
+  .empty-note {
+    color: var(--text-muted);
+    font-style: italic;
+  }
+</style>

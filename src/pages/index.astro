@@ -1,0 +1,344 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Newsletter from '../components/Newsletter.astro';
+
+const title = 'The Crossroads Inn — Cozy Fantasy by Jason Krebs';
+const description = 'The road ends here. The fire is warm. A cozy fantasy series about an ex-mercenary, a magical inn, and the travelers who find their way home.';
+---
+
+<Layout title={title} description={description}>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero">
+    <div class="hero-image img-warm">
+      <img
+        src="/illustrations/hero-fireplace.svg"
+        alt="A roaring fireplace in a stone inn — warm golden light, worn wooden beams, the smell of soup and old books"
+        width="1200" height="800"
+        loading="eager" decoding="async"
+      />
+    </div>
+    <div class="hero-overlay">
+      <div class="hero-content container">
+        <h1 class="hero-headline">You've found it at last.</h1>
+        <p class="hero-sub">The road ends here. The fire is warm.</p>
+        <div class="hero-ctas">
+          <a href="/enter-the-inn" class="btn-primary">Enter the Inn</a>
+          <a href="/stay-the-night" class="btn-text">Stay the Night</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PATH SELECTION ═══ -->
+  <section class="section container">
+    <div class="paths-grid">
+      <a href="/stay-the-night" class="card path-card">
+        <h3>Stay the Night</h3>
+        <p>Read the first chapter. Meet the keeper. See what the inn remembers about you.</p>
+      </a>
+      <a href="/the-ledger" class="card path-card">
+        <h3>Read the Ledger</h3>
+        <p>Stories, whispers, and truths left by travelers who passed through before you.</p>
+      </a>
+      <a href="/the-hearth" class="card path-card">
+        <h3>Join the Hearth</h3>
+        <p>Pull up a chair by the fire. Stories delivered to your door — no schedule, no spam.</p>
+      </a>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══ BOOK PREVIEW ═══ -->
+  <section class="section container">
+    <div class="book-feature">
+      <div class="book-cover img-warm">
+        <img
+          src="/illustrations/book-cover.svg"
+          alt="The Crossroads Inn — Book One cover"
+          width="600" height="900"
+          loading="lazy" decoding="async"
+        />
+      </div>
+      <div class="book-copy">
+        <p class="eyebrow">Book One</p>
+        <h2>The Crossroads Inn</h2>
+        <p class="book-hook">The inn at the crossroads doesn't choose its keeper. It keeps her.</p>
+        <p>
+          An ex-mercenary trades her sword for a soup ladle and inherits an inn
+          that sits at the meeting of five roads. The rooms rearrange themselves.
+          The regulars aren't entirely human. And the door opens for anyone the
+          inn decides needs saving — whether they asked for it or not.
+        </p>
+        <p>A novel of warmth, mystery, and the roads that lead us home.</p>
+        <a href="/stay-the-night" class="btn-text">Read a free sample</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══ LEDGER PREVIEW ═══ -->
+  <section class="section container">
+    <div class="content-narrow" style="text-align: center;">
+      <h2>From the Ledger</h2>
+      <p class="section-sub">Stories, whispers, and truths from travelers who passed through.</p>
+      <div class="ledger-previews">
+        <div class="card ledger-card">
+          <h3>A Traveler Arrived Without a Shadow</h3>
+          <p>She said she'd traded it for directions. The innkeeper poured her tea and didn't ask questions.</p>
+        </div>
+        <div class="card ledger-card">
+          <h3>The Soup That Knows Your Name</h3>
+          <p>Every bowl is different. Every bowl is exactly what you needed. Don't ask how.</p>
+        </div>
+      </div>
+      <a href="/the-ledger" class="btn-text" style="margin-top: var(--sp-lg); display: inline-flex;">Read the Ledger</a>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══ ROOMS PREVIEW ═══ -->
+  <section class="section container">
+    <div class="content-narrow" style="text-align: center;">
+      <h2>Our Rooms</h2>
+      <p class="section-sub">Three rooms. Each one different. Each one exactly what you needed.</p>
+      <div class="rooms-preview-grid">
+        <div class="card room-preview-card">
+          <div class="img-warm room-preview-img">
+            <img src="/illustrations/room-ember.svg" alt="The Ember Room" width="400" height="300" loading="lazy" decoding="async" />
+          </div>
+          <h3>The Ember Room</h3>
+        </div>
+        <div class="card room-preview-card">
+          <div class="img-warm room-preview-img">
+            <img src="/illustrations/room-northwatch.svg" alt="The Northwatch Room" width="400" height="300" loading="lazy" decoding="async" />
+          </div>
+          <h3>The Northwatch Room</h3>
+        </div>
+        <div class="card room-preview-card">
+          <div class="img-warm room-preview-img">
+            <img src="/illustrations/room-loft.svg" alt="The Dreamer's Loft" width="400" height="300" loading="lazy" decoding="async" />
+          </div>
+          <h3>The Dreamer's Loft</h3>
+        </div>
+      </div>
+      <a href="/rooms" class="btn-text" style="margin-top: var(--sp-lg); display: inline-flex;">See all rooms</a>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══ HEARTH (Newsletter) ═══ -->
+  <section class="section container">
+    <div class="content-narrow" style="text-align: center;">
+      <h2>The Hearth</h2>
+      <p class="section-sub">Pull up a chair. The fire is always lit.</p>
+      <Newsletter />
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══ ABOUT PREVIEW ═══ -->
+  <section class="section container">
+    <div class="content-narrow" style="text-align: center;">
+      <h2>A Word from the Keeper</h2>
+      <p>
+        Jason Krebs writes cozy fantasy about tired people, warm rooms, and
+        found families. He drinks more tea than coffee, lives somewhere drafty,
+        and believes the best stories start with someone opening a door.
+      </p>
+      <a href="/enter-the-inn" class="btn-text" style="margin-top: var(--sp-md); display: inline-flex;">About Jason</a>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  /* ═══ HERO ═══ */
+  .hero {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .hero-image {
+    position: absolute;
+    inset: 0;
+    border-radius: 0;
+  }
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 40%;
+  }
+
+  .hero-overlay {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    background: linear-gradient(
+      to top,
+      rgba(26, 20, 16, 0.95) 0%,
+      rgba(26, 20, 16, 0.6) 40%,
+      rgba(26, 20, 16, 0.3) 100%
+    );
+    padding: var(--sp-hero) 0 var(--sp-xxl);
+  }
+
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-headline {
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    color: var(--parchment);
+    margin-bottom: var(--sp-md);
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .hero-sub {
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    color: var(--aged-cream);
+    margin-bottom: var(--sp-xl);
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: var(--sp-lg);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  /* ═══ PATHS GRID ═══ */
+  .paths-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--sp-lg);
+  }
+
+  .path-card {
+    text-decoration: none;
+    color: var(--text);
+    display: block;
+  }
+  .path-card h3 {
+    color: var(--accent);
+    margin-bottom: var(--sp-sm);
+  }
+  .path-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+
+  /* ═══ BOOK FEATURE ═══ */
+  .book-feature {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: var(--sp-xxl);
+    align-items: center;
+  }
+
+  .book-cover {
+    max-width: 280px;
+  }
+  .book-cover img {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+
+  .eyebrow {
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent-soft);
+    margin-bottom: var(--sp-xs);
+  }
+
+  .book-hook {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--accent);
+    line-height: 1.35;
+    margin-bottom: var(--sp-md);
+  }
+
+  .book-copy p {
+    color: var(--text-muted);
+  }
+
+  .section-sub {
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: var(--sp-xl);
+  }
+
+  /* ═══ LEDGER PREVIEWS ═══ */
+  .ledger-previews {
+    display: grid;
+    gap: var(--sp-md);
+    text-align: left;
+  }
+
+  .ledger-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: var(--sp-xs);
+  }
+
+  .ledger-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-style: italic;
+  }
+
+  /* ═══ ROOMS PREVIEW ═══ */
+  .rooms-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--sp-md);
+  }
+
+  .room-preview-card {
+    text-align: center;
+    padding: var(--sp-md);
+  }
+
+  .room-preview-img {
+    margin-bottom: var(--sp-md);
+    aspect-ratio: 4 / 3;
+  }
+
+  .room-preview-card h3 {
+    font-size: 1rem;
+    color: var(--accent);
+  }
+
+  /* ═══ RESPONSIVE ═══ */
+  @media (max-width: 768px) {
+    .book-feature {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    .book-cover {
+      margin: 0 auto;
+      max-width: 200px;
+    }
+    .hero { min-height: 70vh; }
+  }
+
+  @media (max-width: 480px) {
+    .hero { min-height: 60vh; }
+    .hero-ctas { flex-direction: column; gap: var(--sp-md); }
+  }
+</style>

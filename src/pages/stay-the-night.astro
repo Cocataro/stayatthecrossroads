@@ -1,0 +1,279 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = 'Books by Jason Krebs — The Crossroads Inn Series | Stay at The Crossroads';
+const description = 'Read The Crossroads Inn, a cozy fantasy series about an ex-mercenary, a magical inn, and the travelers who find their way home. Free sample chapter.';
+---
+
+<Layout title={title} description={description}>
+
+  <section class="section container">
+    <div class="content-narrow">
+
+      <div class="page-header">
+        <p class="eyebrow">The Crossroads Inn Series</p>
+        <h1>Stay the Night</h1>
+        <p class="page-sub">Six books. One inn. Every road leads back.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ BOOK ONE FEATURE ═══ -->
+  <section class="section-sm container">
+    <div class="book-feature">
+      <div class="book-cover img-warm">
+        <img
+          src="/illustrations/book-cover.svg"
+          alt="The Crossroads Inn — Book One cover"
+          width="600" height="900"
+          loading="eager" decoding="async"
+        />
+      </div>
+      <div class="book-detail">
+        <p class="eyebrow">Book One</p>
+        <h2>The Crossroads Inn</h2>
+        <p class="book-subtitle">A Novel of Warmth, Mystery, and the Roads That Lead Us Home</p>
+
+        <p class="book-hook">
+          The inn at the crossroads doesn't choose its keeper. It keeps her.
+        </p>
+
+        <p>
+          Maren hung up her sword three years ago and hasn't looked back — or
+          tried not to. When a dying cartographer bequeaths her an inn at the
+          junction of five roads, she expects leaky roofs and stale bread. What
+          she gets is a building that rearranges its own rooms, regulars who
+          aren't entirely human, and a door that opens for anyone the inn decides
+          needs saving.
+        </p>
+        <p>
+          There's a bard who plays songs that haven't been written yet. A
+          merchant who pays in memories. A cat that might be a god — or might
+          just be a cat. And a slow, steady warmth Maren hasn't felt since before
+          the wars, growing in the walls and in the people who keep finding their
+          way to her door.
+        </p>
+        <p>
+          But the crossroads remembers everyone who passes through. And some of
+          them are looking for Maren.
+        </p>
+
+        <p class="comp-titles">
+          Perfect for fans of <em>Legends & Lattes</em> and
+          <em>Can't Spell Treason Without Tea</em>.
+        </p>
+
+        <div class="book-ctas">
+          <a href="#sample" class="btn-primary">Read a Free Sample</a>
+          <a href="/the-hearth" class="btn-text">Get notified on release</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══ SAMPLE CHAPTER ═══ -->
+  <section id="sample" class="section container">
+    <div class="content-narrow">
+      <h2 style="text-align: center;">A Free Sample</h2>
+      <p class="section-sub" style="text-align: center;">The first chapter of The Crossroads Inn.</p>
+
+      <div class="sample-chapter card">
+        <h3>Chapter One: Five Roads</h3>
+        <p class="sample-note">
+          <em>Sample chapter coming soon — sign up at
+          <a href="/the-hearth">The Hearth</a> to be the first to read it.</em>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ═══ SERIES OVERVIEW ═══ -->
+  <section class="section container">
+    <div class="content-narrow" style="text-align: center;">
+      <h2>The Series</h2>
+      <p class="section-sub">Six books planned. One inn. Many roads.</p>
+
+      <div class="series-grid">
+        <div class="card series-card current">
+          <span class="series-badge">Book 1</span>
+          <h3>The Crossroads Inn</h3>
+          <p>Coming soon</p>
+        </div>
+        <div class="card series-card">
+          <span class="series-badge">Book 2</span>
+          <h3>TBA</h3>
+          <p>In development</p>
+        </div>
+        <div class="card series-card">
+          <span class="series-badge">Book 3</span>
+          <h3>TBA</h3>
+          <p>Planned</p>
+        </div>
+        <div class="card series-card">
+          <span class="series-badge">Book 4</span>
+          <h3>TBA</h3>
+          <p>Planned</p>
+        </div>
+        <div class="card series-card">
+          <span class="series-badge">Book 5</span>
+          <h3>TBA</h3>
+          <p>Planned</p>
+        </div>
+        <div class="card series-card">
+          <span class="series-badge">Book 6</span>
+          <h3>TBA</h3>
+          <p>Planned</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .page-header {
+    text-align: center;
+    margin-bottom: var(--sp-xl);
+  }
+
+  .eyebrow {
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent-soft);
+    margin-bottom: var(--sp-xs);
+  }
+
+  .page-sub, .section-sub {
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: var(--sp-lg);
+  }
+
+  /* ═══ BOOK FEATURE ═══ */
+  .book-feature {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: var(--sp-xxl);
+    align-items: start;
+  }
+
+  .book-cover { max-width: 300px; }
+  .book-cover img {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+
+  .book-subtitle {
+    font-family: var(--font-ui);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: var(--sp-lg);
+  }
+
+  .book-hook {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--accent);
+    line-height: 1.4;
+    margin-bottom: var(--sp-lg);
+    padding-left: var(--sp-lg);
+    border-left: 3px solid var(--accent);
+  }
+
+  .book-detail p {
+    color: var(--text-muted);
+    margin-bottom: var(--sp-md);
+  }
+
+  .comp-titles {
+    font-family: var(--font-ui);
+    font-size: 0.9rem;
+    color: var(--aged-cream);
+    margin-top: var(--sp-lg);
+  }
+
+  .book-ctas {
+    display: flex;
+    gap: var(--sp-lg);
+    align-items: center;
+    margin-top: var(--sp-xl);
+    flex-wrap: wrap;
+  }
+
+  /* ═══ SAMPLE CHAPTER ═══ */
+  .sample-chapter {
+    margin-top: var(--sp-xl);
+    padding: var(--sp-xl);
+  }
+
+  .sample-chapter h3 {
+    color: var(--accent);
+    margin-bottom: var(--sp-md);
+  }
+
+  .sample-note {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+
+  /* ═══ SERIES GRID ═══ */
+  .series-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: var(--sp-md);
+    margin-top: var(--sp-xl);
+  }
+
+  .series-card {
+    text-align: center;
+    padding: var(--sp-lg);
+  }
+
+  .series-badge {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent-soft);
+  }
+
+  .series-card h3 {
+    font-size: 1rem;
+    margin: var(--sp-sm) 0 var(--sp-xs);
+  }
+
+  .series-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .series-card.current {
+    border: 1px solid var(--accent);
+  }
+
+  @media (max-width: 768px) {
+    .book-feature {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    .book-cover {
+      margin: 0 auto;
+      max-width: 220px;
+    }
+    .book-hook {
+      border-left: none;
+      padding-left: 0;
+      text-align: center;
+    }
+    .book-ctas { justify-content: center; }
+  }
+</style>

@@ -1,0 +1,138 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = 'About Jason Krebs — Enter the Inn | Stay at The Crossroads';
+const description = 'A word from the keeper. Jason Krebs writes cozy fantasy about tired people, warm rooms, and found families.';
+---
+
+<Layout title={title} description={description}>
+
+  <section class="section container">
+    <div class="content-narrow">
+
+      <div class="page-header">
+        <p class="eyebrow">A Word from the Keeper</p>
+        <h1>Enter the Inn</h1>
+      </div>
+
+      <div class="keeper-image img-warm">
+        <img
+          src="/illustrations/inn-exterior.svg"
+          alt="The Crossroads Inn at dusk — stone walls, warm windows, a wooden sign creaking in the wind"
+          width="1200" height="600"
+          loading="eager" decoding="async"
+        />
+      </div>
+
+      <div class="keeper-letter">
+        <p>
+          I didn't set out to write about an inn. I set out to write about a woman
+          who was tired of fighting. About what happens after the quest, after the
+          battle, after everyone goes home and discovers they don't quite fit anymore.
+        </p>
+        <p>
+          She found an inn at a crossroads. Five roads meeting. Five kinds of
+          traveler. And a building that seemed to know things — which room to give
+          you, how you took your tea, whether you needed company or quiet.
+        </p>
+        <p>
+          I write from a drafty office with too many houseplants and a mug that's
+          never quite empty. The Crossroads Inn is a six-book series — cozy fantasy
+          with a slow-burn romance streak, found family, soft magic, and the kind
+          of warmth you feel in your chest when you finally sit down after a long
+          walk.
+        </p>
+        <p>
+          If you've ever wanted a book that feels like pulling a chair up to a fire
+          in an inn where nobody expects anything from you — you've found the right
+          place.
+        </p>
+        <p class="keeper-sign">
+          — Jason
+        </p>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="about-details">
+        <div class="card">
+          <h3>The Series</h3>
+          <p>
+            <strong>The Crossroads Inn</strong> is a six-book cozy fantasy series.
+            Warm windows, tired travelers, and a doorway every road leads back to.
+            Currently in KDP Select (ebook + paperback).
+          </p>
+          <a href="/stay-the-night" class="btn-text">Read Book One</a>
+        </div>
+
+        <div class="card">
+          <h3>Stay Connected</h3>
+          <p>
+            New chapters, reading recommendations, and the occasional secret slipped
+            under your door. Join the Hearth — no spam, no schedule.
+          </p>
+          <a href="/the-hearth" class="btn-text">Join the Hearth</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .page-header {
+    text-align: center;
+    margin-bottom: var(--sp-xl);
+  }
+
+  .eyebrow {
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent-soft);
+    margin-bottom: var(--sp-xs);
+  }
+
+  .keeper-image {
+    margin-bottom: var(--sp-xl);
+    aspect-ratio: 2 / 1;
+  }
+
+  .keeper-letter {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: var(--sp-xl);
+  }
+
+  .keeper-letter p {
+    color: var(--text);
+    margin-bottom: var(--sp-lg);
+  }
+
+  .keeper-sign {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--accent);
+    margin-top: var(--sp-xl);
+  }
+
+  .about-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--sp-lg);
+  }
+
+  .about-details h3 {
+    color: var(--accent);
+    margin-bottom: var(--sp-sm);
+  }
+
+  .about-details p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: var(--sp-md);
+  }
+</style>

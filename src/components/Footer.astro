@@ -1,0 +1,88 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-motto">
+      <p class="motto-line">The fire is always lit.</p>
+      <p class="motto-line">The door is always open.</p>
+    </div>
+
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="/enter-the-inn">Enter the Inn</a>
+      <a href="/stay-the-night">Stay the Night</a>
+      <a href="/the-ledger">The Ledger</a>
+      <a href="/rooms">Our Rooms</a>
+      <a href="/the-hearth">The Hearth</a>
+      <a href="/rss.xml">RSS</a>
+    </nav>
+
+    <div class="footer-newsletter">
+      <p class="footer-newsletter-text">Join the Hearth — stories, warmth, and the occasional secret.</p>
+      <a href="/the-hearth" class="btn-text">Subscribe</a>
+    </div>
+
+    <p class="footer-copy">&copy; {year} Jason Krebs. All rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--worn-wood);
+    padding: var(--sp-xxl) 0 var(--sp-xl);
+    margin-top: var(--sp-hero);
+    text-align: center;
+  }
+
+  .footer-motto {
+    margin-bottom: var(--sp-xl);
+  }
+
+  .motto-line {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--accent);
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    margin-bottom: var(--sp-xs);
+  }
+
+  .footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--sp-lg);
+    margin-bottom: var(--sp-xl);
+  }
+
+  .footer-nav a {
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    transition: color var(--transition);
+  }
+  .footer-nav a:hover { color: var(--accent); }
+
+  .footer-newsletter {
+    margin-bottom: var(--sp-xl);
+  }
+
+  .footer-newsletter-text {
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: var(--sp-sm);
+  }
+
+  .footer-copy {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    color: var(--worn-wood);
+    opacity: 0.7;
+  }
+
+  @media (max-width: 480px) {
+    .footer-nav { gap: var(--sp-md); }
+  }
+</style>

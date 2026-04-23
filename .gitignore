@@ -4,3 +4,5 @@ dist/
 .env
 .env.local
 .DS_Store
+# Keep site/ tracked — it's the nginx serve root (build output)
+# but ignore Astro's default dist/ above

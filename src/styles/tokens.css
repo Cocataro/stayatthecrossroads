@@ -1,0 +1,51 @@
+/* ══════════════════════════════════════════════════════════
+   The Crossroads Inn — Design Tokens
+   v1.0 spec, locked palette + typography + spacing
+   ══════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Colors (8-color palette) ── */
+  --deep-ink:       #1a1410;
+  --dim-ember:      #241a14;
+  --hearth-shadow:  #2f221a;
+  --worn-wood:      #3b2a1f;
+  --candle-gold:    #c89b5e;
+  --warm-amber:     #e0b97a;
+  --parchment:      #f2e6d8;
+  --aged-cream:     #cbb8a0;
+
+  /* Semantic aliases */
+  --bg:             var(--deep-ink);
+  --bg-card:        var(--dim-ember);
+  --bg-elevated:    var(--hearth-shadow);
+  --accent:         var(--candle-gold);
+  --accent-soft:    var(--warm-amber);
+  --text:           var(--parchment);
+  --text-muted:     var(--aged-cream);
+  --border:         var(--worn-wood);
+
+  /* ── Typography ── */
+  --font-heading:   'Cinzel', Georgia, serif;
+  --font-body:      'Crimson Text', Georgia, 'Times New Roman', serif;
+  --font-ui:        'Libre Baskerville', Georgia, serif;
+
+  /* ── Spacing scale (px) ── */
+  --sp-xs:   4px;
+  --sp-sm:   8px;
+  --sp-md:  16px;
+  --sp-lg:  24px;
+  --sp-xl:  40px;
+  --sp-xxl: 64px;
+  --sp-hero: 120px;
+
+  /* ── Global style tokens ── */
+  --radius:     8px;
+  --shadow:     0 10px 30px rgba(0, 0, 0, 0.4);
+  --shadow-sm:  0 4px 12px rgba(0, 0, 0, 0.3);
+  --transition: 300ms ease;
+  --transition-slow: 500ms ease;
+
+  /* ── Layout ── */
+  --max-width: 1200px;
+  --content-width: 720px;
+}
