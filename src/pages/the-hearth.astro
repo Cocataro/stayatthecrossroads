@@ -2,8 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Newsletter from '../components/Newsletter.astro';
 
-const title = 'The Hearth — Newsletter & Community | Stay at The Crossroads';
-const description = 'Join the Hearth. Stories, warmth, and the occasional secret from the Crossroads Inn, delivered to your inbox.';
+const title = 'The Hearth — Get 3 Free Chapters | Stay at The Crossroads';
+const description = 'Join the Hearth and get the first 3 chapters of The Crossroads Inn free. Stories, warmth, and the occasional secret delivered to your inbox.';
 ---
 
 <Layout title={title} description={description}>
@@ -12,16 +12,16 @@ const description = 'Join the Hearth. Stories, warmth, and the occasional secret
     <div class="content-narrow">
 
       <div class="page-header">
-        <p class="eyebrow">Newsletter &amp; Community</p>
+        <p class="eyebrow">Your seat by the fire</p>
         <h1>The Hearth</h1>
         <p class="page-sub">
-          Pull up a chair. The fire is always lit.
+          Get the first 3 chapters of <em>The Crossroads Inn</em> free.
         </p>
       </div>
 
       <div class="hearth-image img-warm">
         <img
-          src="/illustrations/hearth-gathering.svg"
+          src="/illustrations/hearth-gathering.png"
           alt="A circle of travelers gathered around a glowing hearth — warm light, mismatched chairs, the sound of stories"
           width="1200" height="600"
           loading="eager" decoding="async"
@@ -29,15 +29,18 @@ const description = 'Join the Hearth. Stories, warmth, and the occasional secret
       </div>
 
       <div class="hearth-pitch">
-        <p>
-          The Hearth is where the inn's regulars gather. Not a mailing list — a
-          fireside. Stories that don't fit in the Ledger. Early looks at new
-          chapters. The occasional secret slipped under your door at midnight.
-        </p>
-        <p>
-          No spam. No schedule. Just whatever the fire inspires, whenever it
-          inspires it. And you can leave whenever you want — the door is always
-          open.
+        <div class="lead-magnet card">
+          <h2>Read the first 3 chapters free</h2>
+          <p>
+            Sign up below and the first three chapters of <em>The Crossroads Inn</em>
+            land in your inbox — the moment the kettle boils, the first traveler
+            arrives, and the inn begins to remember.
+          </p>
+        </div>
+        <p class="hearth-sub">
+          After that, you'll hear from us when something worth sharing comes
+          along. New chapters. Stories that didn't fit in the books. The occasional
+          secret slipped under your door. No schedule. No spam. The door is always open.
         </p>
       </div>
 

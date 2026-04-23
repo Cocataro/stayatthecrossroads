@@ -5,10 +5,11 @@
 ---
 
 <div class="newsletter-card card">
-  <h3>Sign the Guestbook</h3>
+  <h3>Get 3 Free Chapters</h3>
   <p class="newsletter-lead">
-    Stories from the inn. Early looks at new chapters. The occasional secret
-    slipped under your door.
+    Sign up and the first three chapters of <em>The Crossroads Inn</em>
+    arrive in your inbox. Plus: stories from the inn, early looks, and the
+    occasional secret slipped under your door.
   </p>
   <p class="newsletter-note">No spam. No schedule. Unsubscribe whenever.</p>
 
@@ -29,7 +30,7 @@
     />
     <input type="hidden" name="ml-submit" value="1" />
     <input type="hidden" name="anticsrf" value="true" />
-    <button type="submit" class="btn-primary">Sign the Book</button>
+    <button type="submit" class="btn-primary">Send Me the Chapters</button>
   </form>
   <p id="newsletter-message" class="newsletter-message" aria-live="polite"></p>
 </div>
@@ -137,7 +138,7 @@
           body,
         });
 
-        msg.textContent = 'Signed. Welcome to the inn — check your email.';
+        msg.textContent = 'Check your inbox — your chapters are on the way.';
         msg.className = 'newsletter-message success';
         form.reset();
       } catch {
