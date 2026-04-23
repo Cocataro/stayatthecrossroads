@@ -1,0 +1,26 @@
+services:
+  site:
+    image: nginx:alpine
+    container_name: stayatthecrossroads-site
+    restart: unless-stopped
+    volumes:
+      - ./site:/usr/share/nginx/html:ro
+      - ./nginx-site.conf:/etc/nginx/conf.d/default.conf:ro
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.stay.rule=Host(`stayatthecrossroads.com`) || Host(`www.stayatthecrossroads.com`)
+      - traefik.http.routers.stay.entrypoints=websecure
+      - traefik.http.routers.stay.tls.certresolver=letsencrypt
+      - traefik.http.services.stay.loadbalancer.server.port=80
+      - traefik.http.routers.stay-http.rule=Host(`stayatthecrossroads.com`) || Host(`www.stayatthecrossroads.com`)
+      - traefik.http.routers.stay-http.entrypoints=web
+      - traefik.http.routers.stay-http.middlewares=stay-redirect
+      - traefik.http.middlewares.stay-redirect.redirectscheme.scheme=https
+      - traefik.http.middlewares.stay-redirect.redirectscheme.permanent=true
+      - traefik.http.routers.stay-www.rule=Host(`www.stayatthecrossroads.com`)
+      - traefik.http.routers.stay-www.entrypoints=websecure
+      - traefik.http.routers.stay-www.tls.certresolver=letsencrypt
+      - traefik.http.routers.stay-www.middlewares=stay-www-redirect
+      - traefik.http.middlewares.stay-www-redirect.redirectregex.regex=^https?://www\.stayatthecrossroads\.com/(.*)
+      - traefik.http.middlewares.stay-www-redirect.redirectregex.replacement=https://stayatthecrossroads.com/$${1}
+      - traefik.http.middlewares.stay-www-redirect.redirectregex.permanent=true
