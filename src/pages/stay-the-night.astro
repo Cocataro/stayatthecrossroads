@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
+import bookCover from '../assets/illustrations/book-cover.png';
 
 const title = 'Books by Jason Krebs — The Crossroads Inn Series | Stay at The Crossroads';
 const description = 'Read The Crossroads Inn, a Heartland Fantasy series about an ex-soldier, a magical inn, and the travelers who find their way home. Free sample chapter.';
@@ -23,11 +25,12 @@ const description = 'Read The Crossroads Inn, a Heartland Fantasy series about a
   <section class="section-sm container">
     <div class="book-feature">
       <div class="book-cover img-warm">
-        <img
-          src="/illustrations/book-cover.png"
+        <Image
+          src={bookCover}
           alt="The Crossroads Inn — Book One cover"
           width="600" height="900"
           loading="eager" decoding="async"
+          fetchpriority="high"
         />
       </div>
       <div class="book-detail">

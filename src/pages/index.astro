@@ -1,6 +1,12 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import Newsletter from '../components/Newsletter.astro';
+import heroFireplace from '../assets/illustrations/hero-fireplace.png';
+import bookCover from '../assets/illustrations/book-cover.png';
+import roomEmber from '../assets/illustrations/room-ember.png';
+import roomNorthwatch from '../assets/illustrations/room-northwatch.png';
+import roomLoft from '../assets/illustrations/room-loft.png';
 
 const title = 'The Crossroads Inn — Heartland Fantasy by Jason Krebs';
 const description = 'The road ends here. The fire is warm. A Heartland Fantasy series about an ex-soldier, a magical inn, and the travelers who find their way home.';
@@ -11,11 +17,12 @@ const description = 'The road ends here. The fire is warm. A Heartland Fantasy s
   <!-- ═══ HERO ═══ -->
   <section class="hero">
     <div class="hero-image img-warm">
-      <img
-        src="/illustrations/hero-fireplace.png"
+      <Image
+        src={heroFireplace}
         alt="A roaring fireplace in a stone inn — warm golden light, worn wooden beams, the smell of soup and old books"
         width="1200" height="800"
         loading="eager" decoding="async"
+        fetchpriority="high"
       />
     </div>
     <div class="hero-overlay">
@@ -54,8 +61,8 @@ const description = 'The road ends here. The fire is warm. A Heartland Fantasy s
   <section class="section container">
     <div class="book-feature">
       <div class="book-cover img-warm">
-        <img
-          src="/illustrations/book-cover.png"
+        <Image
+          src={bookCover}
           alt="The Crossroads Inn — Book One cover"
           width="600" height="900"
           loading="lazy" decoding="async"
@@ -108,19 +115,19 @@ const description = 'The road ends here. The fire is warm. A Heartland Fantasy s
       <div class="rooms-preview-grid">
         <div class="card room-preview-card">
           <div class="img-warm room-preview-img">
-            <img src="/illustrations/room-ember.png" alt="The Ember Room" width="400" height="300" loading="lazy" decoding="async" />
+            <Image src={roomEmber} alt="The Ember Room" width="400" height="300" loading="lazy" decoding="async" />
           </div>
           <h3>The Ember Room</h3>
         </div>
         <div class="card room-preview-card">
           <div class="img-warm room-preview-img">
-            <img src="/illustrations/room-northwatch.png" alt="The Northwatch Room" width="400" height="300" loading="lazy" decoding="async" />
+            <Image src={roomNorthwatch} alt="The Northwatch Room" width="400" height="300" loading="lazy" decoding="async" />
           </div>
           <h3>The Northwatch Room</h3>
         </div>
         <div class="card room-preview-card">
           <div class="img-warm room-preview-img">
-            <img src="/illustrations/room-loft.png" alt="The Dreamer's Loft" width="400" height="300" loading="lazy" decoding="async" />
+            <Image src={roomLoft} alt="The Dreamer's Loft" width="400" height="300" loading="lazy" decoding="async" />
           </div>
           <h3>The Dreamer's Loft</h3>
         </div>

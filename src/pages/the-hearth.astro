@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import Newsletter from '../components/Newsletter.astro';
+import hearthGathering from '../assets/illustrations/hearth-gathering.png';
 
 const title = 'The Hearth — Get 3 Free Chapters | Stay at The Crossroads';
 const description = 'Join the Hearth and get the first 3 chapters of The Crossroads Inn free. Stories, warmth, and the occasional secret delivered to your inbox.';
@@ -20,11 +22,12 @@ const description = 'Join the Hearth and get the first 3 chapters of The Crossro
       </div>
 
       <div class="hearth-image img-warm">
-        <img
-          src="/illustrations/hearth-gathering.png"
+        <Image
+          src={hearthGathering}
           alt="A circle of travelers gathered around a glowing hearth — warm light, mismatched chairs, the sound of stories"
           width="1200" height="600"
           loading="eager" decoding="async"
+          fetchpriority="high"
         />
       </div>
 

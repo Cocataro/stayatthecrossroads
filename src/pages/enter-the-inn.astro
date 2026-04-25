@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
+import innExterior from '../assets/illustrations/inn-exterior.png';
 
 const title = 'The Keeper — Enter the Inn | Stay at The Crossroads | Heartland Fantasy by Jason Krebs';
 const description = 'Briar Thornheart keeps the inn at the crossroads. Five roads meeting. A fire that lights itself. And travelers who arrive exactly when they should.';
@@ -16,11 +18,12 @@ const description = 'Briar Thornheart keeps the inn at the crossroads. Five road
       </div>
 
       <div class="keeper-image img-warm">
-        <img
-          src="/illustrations/inn-exterior.png"
+        <Image
+          src={innExterior}
           alt="The Crossroads Inn at dusk — stone walls, warm windows, a wooden sign creaking in the wind"
           width="1200" height="600"
           loading="eager" decoding="async"
+          fetchpriority="high"
         />
       </div>
 

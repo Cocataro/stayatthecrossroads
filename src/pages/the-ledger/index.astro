@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import ledgerJournal from '../../assets/illustrations/ledger-journal.png';
 
 const title = 'The Ledger — Stories from The Crossroads Inn | Stay at The Crossroads';
 const description = 'Stories, whispers, and truths left by travelers who passed through the Crossroads Inn.';
@@ -25,11 +27,12 @@ const posts = (await getCollection('ledger'))
       </div>
 
       <div class="ledger-image img-warm">
-        <img
-          src="/illustrations/ledger-journal.png"
+        <Image
+          src={ledgerJournal}
           alt="An open leather journal on a candlelit desk — ink-stained pages filled with travelers' stories"
           width="1200" height="500"
           loading="eager" decoding="async"
+          fetchpriority="high"
         />
       </div>
 
