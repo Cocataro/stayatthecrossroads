@@ -58,7 +58,7 @@ Your next chapter has been waiting the same way. Chapter 2 — "The Mobile Terra
 
 ## Email 3 — Day 7
 
-**Subject:** The last chapter I'll send for free  
+**Subject:** The third chapter — and then the door stays open  
 **Preview text:** And if you want to know what comes next —
 
 ---
@@ -71,7 +71,7 @@ A note the keeper left in the margin of the ledger, undated:
 
 *Those are a different kind of traveler. A more curious one, maybe. Or just a more honest one.*
 
-The last free chapter — "Link to the Antagonist" — is below.
+The third chapter — "Link to the Antagonist" — is below.
 
 **[Read Chapter 3: Link to the Antagonist →]**
 
@@ -120,7 +120,7 @@ This can be built manually in the MailerLite dashboard or via API once a `MAILER
    - Body: see Email 2 above
 5. **Wait:** 4 days (7 days total from signup)
 6. **Email 3** — send on Day 7
-   - Subject: "The last chapter I'll send for free"
+   - Subject: "The third chapter — and then the door stays open"
    - Preview: "And if you want to know what comes next —"
    - Body: see Email 3 above (fill in Amazon link before activating)
 7. **On completion:** tag subscriber `welcome_complete`, add to main Hearth list/group
@@ -138,7 +138,7 @@ This can be built manually in the MailerLite dashboard or via API once a `MAILER
 ## Acceptance notes
 
 - All three emails are in Briar Thornheart / inn-narrator voice. Zero "Jason here / I write" phrasing.
-- Subject lines are marketing-friendly but do not break in-world register ("free chapter — limited time" language deliberately avoided).
+- Subject lines are marketing-friendly but do not break in-world register. "Free," "limited time," and other transactional marketing language is deliberately absent — keeper wouldn't speak that way.
 - Genre never explicitly named in body copy (atmosphere carries it).
 - No hard sell. Email 3 CTA is offered, not pushed.
 - Spoiler-free.
