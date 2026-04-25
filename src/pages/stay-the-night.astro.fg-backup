@@ -98,33 +98,33 @@ const description = "The battlefield has no place for broken things. The first b
       <div class="series-grid">
         <div class="card series-card current">
           <span class="series-badge">Book 1</span>
-          <h3>The Keeper's Reluctance</h3>
+          <h3>The Crossroads Inn</h3>
           <p>Coming soon</p>
         </div>
         <div class="card series-card">
           <span class="series-badge">Book 2</span>
-          <h3>Doors Between Realms</h3>
+          <h3>TBA</h3>
           <p>In development</p>
         </div>
         <div class="card series-card">
           <span class="series-badge">Book 3</span>
-          <h3>Echoes of Old Keepers</h3>
-          <p>Outlined</p>
+          <h3>TBA</h3>
+          <p>Planned</p>
         </div>
         <div class="card series-card">
           <span class="series-badge">Book 4</span>
-          <h3>Heartfire Ascendant</h3>
-          <p>Outlined</p>
+          <h3>TBA</h3>
+          <p>Planned</p>
         </div>
         <div class="card series-card">
           <span class="series-badge">Book 5</span>
-          <h3>Shadow in the Crossroads</h3>
-          <p>Outlined</p>
+          <h3>TBA</h3>
+          <p>Planned</p>
         </div>
         <div class="card series-card">
           <span class="series-badge">Book 6</span>
-          <h3>Keeper's Dawn</h3>
-          <p>Outlined</p>
+          <h3>TBA</h3>
+          <p>Planned</p>
         </div>
       </div>
     </div>
