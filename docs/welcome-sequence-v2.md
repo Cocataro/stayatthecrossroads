@@ -101,6 +101,40 @@ Board to confirm segmentation approach before automation goes live.
 
 ---
 
+## MailerLite automation spec (Board-executable)
+
+Account: 2271322 | Form: 184855632701032232  
+This can be built manually in the MailerLite dashboard or via API once a `MAILERLITE_API_KEY` is available.
+
+### Automation steps
+
+1. **Trigger:** Subscriber joins group linked to form 184855632701032232 (signup on stayatthecrossroads.com)
+2. **Email 1** — send immediately (Day 0)
+   - Subject: "Your chapter is by the fire"
+   - Preview: "Five roads meet here. You found the right one."
+   - Body: see Email 1 above
+3. **Wait:** 3 days
+4. **Email 2** — send on Day 3
+   - Subject: "Something moved on the eastern road"
+   - Preview: "Chapter 2 is inside, whenever you're ready."
+   - Body: see Email 2 above
+5. **Wait:** 4 days (7 days total from signup)
+6. **Email 3** — send on Day 7
+   - Subject: "The last chapter I'll send for free"
+   - Preview: "And if you want to know what comes next —"
+   - Body: see Email 3 above (fill in Amazon link before activating)
+7. **On completion:** tag subscriber `welcome_complete`, add to main Hearth list/group
+
+### Before activating
+
+- [ ] Board: provide `MAILERLITE_API_KEY` (or set up automation manually in dashboard)
+- [ ] Ben/JAS-38: chapter download links — PDFs must exist before emails go live
+- [ ] Board/CEO: fill in Amazon/KDP URL (or pre-order URL + launch date) in Email 3
+- [ ] EIC: voice approval on all 3 emails
+- [ ] Test: submit a test email, verify all 3 arrive at correct cadence
+
+---
+
 ## Acceptance notes
 
 - All three emails are in Briar Thornheart / inn-narrator voice. Zero "Jason here / I write" phrasing.
