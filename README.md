@@ -1,6 +1,6 @@
 # stayatthecrossroads.com
 
-The Crossroads Inn — immersive cozy fantasy series site by Jason Krebs.
+The Crossroads Inn — immersive Heartland Fantasy series site by Jason Krebs.
 Full redesign per v1.0 spec.
 
 ## Status

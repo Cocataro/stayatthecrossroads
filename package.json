@@ -2,7 +2,7 @@
   "name": "stayatthecrossroads",
   "version": "1.0.0",
   "private": true,
-  "description": "The Crossroads Inn — immersive cozy fantasy author site for Jason Krebs",
+  "description": "The Crossroads Inn — immersive Heartland Fantasy author site for Jason Krebs",
   "type": "module",
   "scripts": {
     "dev": "astro dev",
