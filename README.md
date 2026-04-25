@@ -23,3 +23,4 @@ Once Nina has built the Astro source under `src/`:
 - This repo: `Cocataro/stayatthecrossroads` (public)
 - Nina: write access via existing GITHUB_TOKEN (same PAT also covers this repo after Board updates scope)
 - Sofia: write access for illustration delivery
+# Last deploy test: 2026-04-25T21:59:07Z
