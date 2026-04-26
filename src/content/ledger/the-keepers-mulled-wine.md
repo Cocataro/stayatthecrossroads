@@ -2,8 +2,9 @@
 title: "Mulled Wine"
 description: "The spices forgive the wine. Use the wine you would not drink alone."
 date: 2026-04-27
-tags: ["recipe", "kitchen"]
+tags: ["recipes"]
 voice: "Gorrick"
+source: "Hannah Glasse, 'The Art of Cookery Made Plain and Easy' (1747). Original calls for claret warmed with spices and a hot poker; Gorrick prefers slow heat and no theatrics."
 ---
 
 Mulled wine is for guests you don't know yet.
@@ -29,7 +30,3 @@ I have made this in a pot over a campfire with wine that smelled of the road. Th
 Everything goes in the pot cold. Bring it up slow — not boiling, never boiling. A boil drives off the smell, and the smell is half of what you're giving them. Hold it at a low steam for twenty minutes. Longer if the wine is rough. Strain through cloth. Pour into heavy cups.
 
 The cups matter. A thin cup cools too fast and tells your guest you weren't thinking about them.
-
----
-
-*Adapted from Hannah Glasse, "The Art of Cookery Made Plain and Easy" (1747). Glasse's original calls for claret warmed with spices and a hot poker. Gorrick prefers slow heat and no theatrics.*

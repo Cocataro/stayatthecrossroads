@@ -2,8 +2,9 @@
 title: "Pottage"
 description: "The pot is on for the morning. It asks to be stirred, not because you have a schedule."
 date: 2026-04-29
-tags: ["recipe", "kitchen"]
+tags: ["recipes"]
 voice: "Gorrick"
+source: "'The Forme of Cury' (c. 1390), edited from the original manuscript by Samuel Pegge (1791). The medieval pottage called for ground almonds and saffron; Gorrick favors barley and root vegetables."
 ---
 
 A pottage is patience.
@@ -36,7 +37,3 @@ It cooks for an hour, minimum. Stir it when it asks to be stirred — you will k
 Add the greens in the last five minutes. Salt only now. Taste it. Adjust.
 
 Serve in bowls that hold heat. The hands that made it should be the warmest hands in the room.
-
----
-
-*Adapted from "The Forme of Cury" (c. 1390), edited from the original manuscript by Samuel Pegge (1791). The medieval pottage called for ground almonds and saffron as enrichment; Gorrick's version omits these and favors barley and root vegetables — he cooks for a full house, not a feast day.*

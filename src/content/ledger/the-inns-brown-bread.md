@@ -2,8 +2,9 @@
 title: "The Bread"
 description: "Anyone can stew. Bread tells you what kind of hands you have."
 date: 2026-04-28
-tags: ["recipe", "kitchen"]
+tags: ["recipes"]
 voice: "Gorrick"
+source: "Fannie Farmer, 'The Boston Cooking-School Cook Book' (1896). Farmer's recipe steams a similar batter for the same time. Gorrick uses slightly less molasses and always buttermilk."
 ---
 
 Bread is the test.
@@ -34,7 +35,3 @@ Grease your mold. Fill it no more than two-thirds. Seal the top with cloth tied 
 Turn it out. Let it cool before you cut it. A hot loaf cut too early wastes the loaf — the steam inside is still finishing its work. Press the top with two fingers. It should push back firm, not soft. The hands know before the eyes do.
 
 Slice thick.
-
----
-
-*Adapted from Fannie Farmer, "The Boston Cooking-School Cook Book" (1896). Farmer's recipe steams a similar batter for the same time. Gorrick uses slightly less molasses and always buttermilk — sweet milk does not have the fight in it.*
