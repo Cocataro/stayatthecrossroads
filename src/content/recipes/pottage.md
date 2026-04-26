@@ -5,6 +5,7 @@ date: 2026-04-29
 tags: ["recipes"]
 voice: "Gorrick"
 source: "'The Forme of Cury' (c. 1390), edited from the original manuscript by Samuel Pegge (1791). The medieval pottage called for ground almonds and saffron; Gorrick favors barley and root vegetables."
+appears_in: "Book 1, Prologue & Chapter 1 — Oldevar's first meal for Briar"
 ---
 
 A pottage is patience.
