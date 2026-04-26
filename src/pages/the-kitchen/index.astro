@@ -1,0 +1,133 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const title = 'The Kitchen — Recipes from The Crossroads Inn | Stay at The Crossroads';
+const description = "What gets served at the inn — and how Gorrick makes it. Adapted from real cookbooks; cited in the footer.";
+
+const recipes = (await getCollection('recipes'))
+  .filter(r => !r.data.draft)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+
+<Layout title={title} description={description}>
+
+  <section class="section container">
+    <div class="content-narrow">
+
+      <div class="page-header">
+        <p class="eyebrow">From the inn</p>
+        <h1>Recipes from the Kitchen</h1>
+        <p class="page-sub">
+          What gets served at The Crossroads Inn. Bread that keeps. Pottage that
+          waits. Wine for guests you don't know yet. Gorrick wrote these down
+          because someone had to.
+        </p>
+      </div>
+
+      {recipes.length === 0 ? (
+        <p class="kitchen-empty">The kitchen hasn't sent a recipe out yet. Soon.</p>
+      ) : (
+        <div class="recipes-grid">
+          {recipes.map(recipe => (
+            <article class="card recipe-card">
+              <h2><a href={`/the-kitchen/${recipe.slug}`}>{recipe.data.title}</a></h2>
+              <p class="recipe-desc">{recipe.data.description}</p>
+              {recipe.data.appears_in && (
+                <p class="recipe-appears"><em>Served in {recipe.data.appears_in}.</em></p>
+              )}
+              <a href={`/the-kitchen/${recipe.slug}`} class="btn-text">Read the recipe</a>
+            </article>
+          ))}
+        </div>
+      )}
+
+      <div class="divider"></div>
+
+      <p class="kitchen-note">
+        Every recipe in the kitchen is adapted from a real cookbook or historical
+        cookery text. Sources are listed in the
+        <a href="/downloads/Crossroads-Inn-Recipe-Citations.pdf" download>Citations</a>
+        download, footer of every page.
+      </p>
+
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .page-header {
+    text-align: center;
+    margin-bottom: var(--sp-xxl);
+  }
+
+  .eyebrow {
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent-soft);
+    margin-bottom: var(--sp-sm);
+  }
+
+  .page-sub {
+    color: var(--text-muted);
+    font-style: italic;
+    line-height: 1.7;
+    max-width: 50ch;
+    margin: 0 auto;
+  }
+
+  .recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--sp-lg);
+  }
+
+  .recipe-card h2 {
+    font-size: 1.4rem;
+    margin-bottom: var(--sp-sm);
+  }
+  .recipe-card h2 a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .recipe-card h2 a:hover {
+    text-decoration: underline;
+  }
+
+  .recipe-desc {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: var(--sp-sm);
+    font-style: italic;
+  }
+
+  .recipe-appears {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: var(--sp-md);
+  }
+
+  .kitchen-empty {
+    color: var(--text-muted);
+    text-align: center;
+    font-style: italic;
+    padding: var(--sp-xxl) 0;
+  }
+
+  .kitchen-note {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-style: italic;
+    text-align: center;
+    line-height: 1.7;
+    max-width: 50ch;
+    margin: var(--sp-lg) auto 0;
+  }
+
+  .kitchen-note a {
+    color: var(--accent);
+  }
+</style>

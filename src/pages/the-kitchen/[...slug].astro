@@ -1,0 +1,130 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('recipes');
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const title = `${post.data.title} — The Kitchen | Stay at The Crossroads`;
+---
+
+<Layout title={title} description={post.data.description}>
+
+  <article class="section container">
+    <div class="content-narrow">
+
+      <div class="post-header">
+        <a href="/the-kitchen" class="back-link">&larr; Back to the Kitchen</a>
+        <time datetime={post.data.date.toISOString().split('T')[0]}>
+          {post.data.date.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          })}
+        </time>
+        <h1>{post.data.title}</h1>
+        {post.data.appears_in && (
+          <p class="recipe-appears-in"><em>Served in {post.data.appears_in}.</em></p>
+        )}
+      </div>
+
+      <div class="post-body recipe-body">
+        <Content />
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="post-footer">
+        <p class="post-footer-note">
+          More recipes are <a href="/the-kitchen">in the kitchen</a>. Sources for every
+          recipe are in the <a href="/downloads/Crossroads-Inn-Recipe-Citations.pdf" download>Citations</a> download.
+        </p>
+      </div>
+
+    </div>
+  </article>
+
+</Layout>
+
+<style>
+  .post-header {
+    margin-bottom: var(--sp-xl);
+    text-align: center;
+  }
+
+  .back-link {
+    display: inline-block;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    margin-bottom: var(--sp-md);
+  }
+  .back-link:hover { color: var(--accent); }
+
+  .post-header time {
+    display: block;
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    color: var(--accent-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--sp-sm);
+  }
+
+  .post-header h1 {
+    margin-bottom: var(--sp-sm);
+  }
+
+  .recipe-appears-in {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  .recipe-body :global(h2) {
+    margin-top: var(--sp-xl);
+    color: var(--accent);
+  }
+
+  .recipe-body :global(ul) {
+    list-style: none;
+    padding-left: 0;
+    margin: var(--sp-md) 0;
+  }
+
+  .recipe-body :global(ul li) {
+    padding: var(--sp-xs) 0;
+    border-bottom: 1px dotted var(--worn-wood);
+  }
+  .recipe-body :global(ul li:last-child) {
+    border-bottom: none;
+  }
+
+  .recipe-body :global(p) {
+    line-height: 1.8;
+    margin-bottom: var(--sp-md);
+  }
+
+  .recipe-body :global(hr) {
+    border: 0;
+    border-top: 1px solid var(--worn-wood);
+    margin: var(--sp-xl) 0;
+  }
+
+  .post-footer-note {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-style: italic;
+    text-align: center;
+  }
+  .post-footer-note a { color: var(--accent); }
+</style>
