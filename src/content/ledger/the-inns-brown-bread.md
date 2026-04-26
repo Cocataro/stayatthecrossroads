@@ -1,24 +1,23 @@
 ---
-title: "The Inn's Brown Bread"
-description: "It comes out in the morning wrapped in a cloth, still warm. The keeper started making it the night before."
+title: "The Bread"
+description: "Anyone can stew. Bread tells you what kind of hands you have."
 date: 2026-04-28
 tags: ["recipe", "kitchen"]
+voice: "Gorrick"
 ---
 
-It comes out in the morning wrapped in a cloth, still warm.
+Bread is the test.
 
-By the time the guests are up — the ones who stayed the night, the ones who slept in the good room or the narrow room or the room that smells of cedar and old wool — the bread is already on the table. The keeper started it the night before. This is what the keeper does while the inn sleeps: she keeps it.
+Anyone can stew — the hard things go in first, the soft things last, salt at the end. A stew forgives you. Bread does not. The dough knows when you're distracted. It knows when you're rushing it. It holds that against you for the full three hours it sits in the pot, and it will show you the result when you turn it out.
 
-The bread is dark and dense and tastes of molasses, the way bread in old houses sometimes does. Not sweet, exactly. More like something that remembers sweetness from a long way off.
+I have kept dough alive for forty years. I have done other things for forty years as well. The dough was the harder discipline of the two.
 
-A merchant once told her she should sell it. She gave him a look that closed the subject permanently.
-
-Here is how she makes it:
+This is a steamed rye loaf. It doesn't rise the way wheat rises. It is dense and dark and it keeps. You can march with it. At the end of the march, it will still be bread. I cannot say that for most things.
 
 ---
 
-**The Inn's Brown Bread**  
-*Steamed. Makes 1 loaf. Keeps well wrapped in a cloth.*
+**Steamed Rye Bread**  
+*1 loaf. Feeds 4 people for two days, or two people for longer than that.*
 
 - 1 cup rye flour
 - 1 cup fine cornmeal
@@ -26,12 +25,16 @@ Here is how she makes it:
 - ¾ teaspoon baking soda
 - 1 teaspoon salt
 - ¾ cup unsulfured molasses
-- 1¾ cups buttermilk (or sour milk — add a tablespoon of vinegar to fresh milk and let it stand)
+- 1¾ cups buttermilk
 
-Mix the dry ingredients together in a bowl. Stir in the molasses and buttermilk until just combined; do not overwork it. Pour into a greased tin mold or deep can, filling no more than two-thirds full. Cover tightly with foil or a cloth tied firm. Set the mold in a pot of simmering water — water reaching halfway up the sides — and steam for 3½ hours, adding water as needed. Turn out and let cool before slicing.
+Mix the dry together first. Add the molasses, then the buttermilk. Stir until combined — do not overwork it. These are not kneading hands. These hands stop when the thing is mixed.
 
-The keeper slices it thick. This is not negotiable.
+Grease your mold. Fill it no more than two-thirds. Seal the top with cloth tied firm, or foil. Set it in simmering water — water halfway up the sides — and leave it for three and a half hours. You will need to add water as it goes. Plan for this.
+
+Turn it out. Let it cool before you cut it. A hot loaf cut too early wastes the loaf — the steam inside is still finishing its work. Press the top with two fingers. It should push back firm, not soft. The hands know before the eyes do.
+
+Slice thick.
 
 ---
 
-*Adapted from Fannie Farmer, "The Boston Cooking-School Cook Book" (1896). Farmer's recipe steams a similar batter for 3½ hours; the Crossroads version uses slightly less molasses and always buttermilk rather than sweet milk.*
+*Adapted from Fannie Farmer, "The Boston Cooking-School Cook Book" (1896). Farmer's recipe steams a similar batter for the same time. Gorrick uses slightly less molasses and always buttermilk — sweet milk does not have the fight in it.*
