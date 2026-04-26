@@ -1,0 +1,153 @@
+---
+// MailerLite form — same account/form as the Hearth Newsletter.
+// Account: 2271322, Form: 184855632701032232
+// Adds `signup_source=preorder_alert` so Tess can segment launch-alert
+// subscribers from the lead-magnet "first 3 chapters" group.
+---
+
+<div class="launchalert-card card">
+  <h3>Be first when the door opens</h3>
+  <p class="launchalert-lead">
+    <em>The Keeper's Reluctance</em> — Book One of <em>The Crossroads Inn</em> —
+    is in its last stretch. Leave your name in the ledger and you'll
+    be the first to hear the day it's ready.
+  </p>
+  <p class="launchalert-note">No letters before the day. No reminders. One word when the door is open, and that's it.</p>
+
+  <form
+    id="launchalert-form"
+    class="launchalert-form"
+    action="https://assets.mailerlite.com/jsonp/2271322/forms/184855632701032232/subscribe"
+    method="POST"
+  >
+    <label class="visually-hidden" for="launchalert-email">Email address</label>
+    <input
+      id="launchalert-email"
+      type="email"
+      name="fields[email]"
+      placeholder="your@email.com"
+      autocomplete="email"
+      required
+    />
+    <input type="hidden" name="fields[signup_source]" value="preorder_alert" />
+    <input type="hidden" name="ml-submit" value="1" />
+    <input type="hidden" name="anticsrf" value="true" />
+    <button type="submit" class="btn-primary">Add me to the ledger</button>
+  </form>
+  <p id="launchalert-message" class="launchalert-message" aria-live="polite"></p>
+</div>
+
+<style>
+  .launchalert-card {
+    text-align: center;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .launchalert-card h3 {
+    font-family: var(--font-heading);
+    color: var(--accent);
+    font-size: 1.5rem;
+    margin-bottom: var(--sp-sm);
+  }
+
+  .launchalert-lead {
+    color: var(--text);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: var(--sp-sm);
+  }
+
+  .launchalert-note {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-style: italic;
+    margin-bottom: var(--sp-lg);
+  }
+
+  .launchalert-form {
+    display: flex;
+    gap: var(--sp-sm);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .launchalert-form input[type="email"] {
+    flex: 1 1 14rem;
+    padding: 0.85rem 1rem;
+    background: var(--hearth-shadow);
+    border: 1px solid var(--worn-wood);
+    border-radius: var(--radius);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: border-color var(--transition), box-shadow var(--transition);
+  }
+
+  .launchalert-form input[type="email"]::placeholder {
+    color: var(--aged-cream);
+    opacity: 0.6;
+  }
+
+  .launchalert-form input[type="email"]:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(200, 155, 94, 0.2);
+  }
+
+  .launchalert-message {
+    margin-top: var(--sp-md);
+    font-size: 0.9rem;
+    min-height: 1.2rem;
+    color: var(--text-muted);
+  }
+  .launchalert-message.success { color: var(--accent); font-weight: 600; }
+  .launchalert-message.error { color: #c47070; }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap; border: 0;
+  }
+</style>
+
+<script>
+  const form = document.getElementById('launchalert-form') as HTMLFormElement | null;
+  const msg = document.getElementById('launchalert-message');
+
+  if (form && msg) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const emailInput = form.querySelector<HTMLInputElement>('input[type="email"]');
+      const email = emailInput?.value?.trim();
+      if (!email) return;
+
+      msg.textContent = 'Signing the ledger…';
+      msg.className = 'launchalert-message';
+
+      try {
+        const body = new URLSearchParams();
+        body.set('fields[email]', email);
+        body.set('fields[signup_source]', 'preorder_alert');
+        body.set('ml-submit', '1');
+        body.set('anticsrf', 'true');
+
+        await fetch(form.action, {
+          method: 'POST',
+          mode: 'no-cors',
+          body,
+        });
+
+        msg.textContent = 'Your name is in the ledger. The keeper will write when the door opens.';
+        msg.className = 'launchalert-message success';
+        form.reset();
+      } catch {
+        msg.textContent = 'Something went wrong. Try again in a moment.';
+        msg.className = 'launchalert-message error';
+      }
+    });
+  }
+</script>

@@ -1,0 +1,165 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LaunchAlert from '../components/LaunchAlert.astro';
+
+const title = "The Keeper's Reluctance — coming summer 2026 | The Crossroads Inn";
+const description = "The Keeper's Reluctance — Book One of The Crossroads Inn — arrives this summer. A Heartland Fantasy by Jason Krebs. Leave your name in the ledger to be first when the door opens.";
+---
+
+<Layout title={title} description={description}>
+
+  <section class="preorder-hero section container">
+    <div class="content-narrow" style="text-align: center;">
+
+      <p class="eyebrow">Coming this summer</p>
+      <h1>The Keeper's Reluctance</h1>
+      <p class="preorder-series">The Crossroads Inn — Book One</p>
+
+      <div class="preorder-divider">
+        <span>✦</span>
+      </div>
+
+      <p class="preorder-hook">
+        The battlefield has no place for broken things.
+      </p>
+
+      <div class="preorder-prose">
+        <p>
+          Briar Thornheart said it to her own soldiers the day she dismissed
+          them, after the magic at Ashen Reach took her sword arm and eleven
+          of her command. She meant it as a kindness. She knew it was a lie.
+        </p>
+        <p>
+          Six months later, with five coins and no plan, she signs a deed for
+          an inn she didn't know existed — at a crossroads where five realms
+          touch, run by a man who watched her from the upper window before
+          she ever knocked.
+        </p>
+        <p>
+          The Crossroads Inn doesn't look for warriors. It looks for the ones
+          who walked away. And something in its foundation is starting to wake.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="section container">
+    <div class="content-narrow" style="text-align: center;">
+
+      <h2>The door isn't quite open yet.</h2>
+      <p class="preorder-status">
+        The keeper is still finishing the account. <em>The Keeper's Reluctance</em>
+        is in its last stretch — the writing nearly done, the editing close
+        behind. The door opens this summer. We'll send one letter when it does.
+        No reminders. No build-up. Just the day.
+      </p>
+
+      <LaunchAlert />
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="section container">
+    <div class="content-narrow" style="text-align: center;">
+      <h2>While you wait</h2>
+      <p class="preorder-meantime">
+        The Prologue is already by the fire. So is the first chapter, if you
+        join the Hearth.
+      </p>
+      <div class="preorder-meantime-ctas">
+        <a href="/the-prologue" class="btn-primary">Read the Prologue</a>
+        <a href="/the-hearth" class="btn-text">Get the first 3 chapters</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .preorder-hero {
+    padding-top: var(--sp-xxl);
+  }
+
+  .eyebrow {
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent-soft);
+    margin-bottom: var(--sp-sm);
+  }
+
+  .preorder-series {
+    font-family: var(--font-ui);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: var(--sp-xl);
+  }
+
+  .preorder-divider {
+    margin: var(--sp-xl) auto;
+    color: var(--accent-soft);
+    font-size: 1.2rem;
+    letter-spacing: 0.5em;
+  }
+
+  .preorder-hook {
+    font-family: var(--font-heading);
+    font-style: italic;
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+    color: var(--accent);
+    line-height: 1.4;
+    margin-bottom: var(--sp-xl);
+    padding: var(--sp-md) var(--sp-lg);
+    border-left: 3px solid var(--accent);
+    border-right: 3px solid var(--accent);
+    max-width: 38ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .preorder-prose p {
+    color: var(--text);
+    line-height: 1.8;
+    margin-bottom: var(--sp-md);
+    text-align: left;
+  }
+
+  .preorder-status {
+    color: var(--text-muted);
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: var(--sp-xl);
+    max-width: 50ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .preorder-meantime {
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: var(--sp-lg);
+  }
+
+  .preorder-meantime-ctas {
+    display: flex;
+    gap: var(--sp-lg);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 768px) {
+    .preorder-hook {
+      border-left: none;
+      border-right: none;
+      padding: var(--sp-md) 0;
+    }
+  }
+</style>
