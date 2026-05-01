@@ -1,16 +1,16 @@
 # Welcome Email Sequence v2 — The Crossroads Inn
 
-**Status:** AUTOMATION LIVE IN MAILERLITE — enabled pending Board sign-off + HTML body entry in dashboard  
+**Status:** BLOCKED — email steps missing, domain validation issue prevents API recreation. Board must add steps via dashboard.  
 **MailerLite account:** 2271322 | Form: 184855632701032232  
 **Automation ID:** 186277124364043274  
-**Trigger:** subscriber_joins_group → "Newsletter sign up" (group 184855710547314606)  
+**Trigger:** subscriber_joins_group → "Newsletter sign up" (group 184855710547314606) — ✓ intact  
 **Cadence:** 3 emails — Day 0 (immediate), Day 3, Day 7  
 **Voice:** In-world only. Briar Thornheart (keeper) speaking directly. Zero Jason first-person phrasing.  
 **Genre framing:** Heartland Fantasy (NOT cozy fantasy) — use only if genre is named at all.
 **Chapter PDF:** `https://stayatthecrossroads.com/downloads/Crossroads-Inn-Sample.pdf` (combined 3-chapter PDF, commit 325a04a)  
 **Pre-order URL:** `https://stayatthecrossroads.com/preorder`
 
-> **What's not in this version:** The automation structure, trigger, step chain, and email subject/preheader/plain-text are all set via API. **HTML body copy still needs to be entered manually in the MailerLite dashboard** — the MailerLite API does not support setting rich HTML content for automation emails programmatically. Use the copy below, paste into each email's editor in the ML dashboard. Do not enable the automation until HTML is entered and a test send is verified.
+> **Current automation state (2026-05-01):** Trigger is intact and wired to the signup form. Two delay steps remain (3-day delay, 4-day delay). All 3 email steps are missing — deleted during dashboard editing and API cleanup attempts. The MailerLite API now rejects new email step creation with `jasonkrebsbooks@outlook.com` (requires a verified custom sending domain). Board must add the 3 email steps manually in the dashboard using the copy below.
 >
 > Note: chapter PDF link resolves to the combined 3-chapter sample. All three emails link to the same PDF; the drip pacing frames which chapter to read, not access control.
 
@@ -109,24 +109,38 @@ Board to confirm segmentation approach before automation goes live.
 **Account:** 2271322  
 **Dashboard:** https://dashboard.mailerlite.com/automations/186277124364043274  
 
-### What is built via API (done)
+### Current automation state (2026-05-01)
 
-| Step | ID | Status |
-|------|-----|--------|
+| Component | ID | Status |
+|-----------|-----|--------|
 | Trigger: subscriber_joins_group → "Newsletter sign up" | 186277389015189218 | ✓ complete |
-| Email 1 — "Your chapter is by the fire" (Day 0) | 186277169081615964 | ✓ subject/preheader set |
-| Delay — 3 days | 186277317938513778 | ✓ configured |
-| Email 2 — "Something moved on the eastern road" (Day 3) | 186277326013597638 | ✓ subject/preheader set |
-| Delay — 4 days | 186277344633161391 | ✓ configured |
-| Email 3 — "The third chapter…" (Day 7) | 186277351097632692 | ✓ subject/preheader set |
+| Delay — 3 days | 186277317938513778 | ✓ configured (floating, needs Email 1 as parent) |
+| Delay — 4 days | 186277344633161391 | ✓ configured (parent = Delay 1) |
+| Email 1 — "Your chapter is by the fire" (Day 0) | **MISSING** | ✗ deleted — must be recreated |
+| Email 2 — "Something moved on the eastern road" (Day 3) | **MISSING** | ✗ deleted — must be recreated |
+| Email 3 — "The third chapter…" (Day 7) | **MISSING** | ✗ deleted — must be recreated |
 
-### What still needs manual entry in the ML dashboard
+### Why API cannot recreate email steps
 
-The MailerLite API does not support setting rich HTML email body content for automation emails programmatically. For each email step, open the ML dashboard, click into the email, and paste the HTML body from this document.
+MailerLite's API now rejects email step creation with `jasonkrebsbooks@outlook.com` as the from address: "Campaigns cannot be sent from this domain. Please use an authenticated custom business domain." This is a platform policy change — free email provider domains are blocked. The existing trigger and delay steps are grandfathered, but new email steps cannot be created via API with the current account email.
+
+**Two paths forward:**
+
+**Option A (preferred) — Verify custom sending domain:**
+1. In MailerLite dashboard → Account → Sending domains → Add domain `stayatthecrossroads.com`
+2. Complete DNS verification (add required DKIM/SPF records to stayatthecrossroads.com DNS)
+3. Once verified, Tess can create email steps via API with `from: hello@stayatthecrossroads.com`
+
+**Option B — Add email steps manually in ML dashboard:**
+1. Open automation `186277124364043274` in MailerLite dashboard
+2. Add Email 1 step before Delay 1. Subject, preheader, body from this document.
+3. Add Email 2 step between Delay 1 and Delay 2. Subject, preheader, body from this document.
+4. Add Email 3 step after Delay 2. Subject, preheader, body from this document.
+5. Use the drag-and-drop block editor in the ML dashboard. Block structure specified above.
 
 ### Before enabling the automation
 
-- [ ] **Board:** enter HTML body copy for all 3 emails in ML dashboard (see body copy above)
+- [ ] **Board:** recreate 3 email steps via dashboard (Option B) OR verify sending domain (Option A)
 - [ ] **Board/Tess:** submit a test-subscriber email, verify all 3 arrive at correct cadence
 - [ ] **Board:** enable the automation (currently disabled)
 
