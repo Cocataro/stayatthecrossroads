@@ -1,13 +1,18 @@
 # Welcome Email Sequence v2 — The Crossroads Inn
 
-**Status:** DRAFT — awaiting EIC voice approval + Board review before going live in MailerLite  
+**Status:** AUTOMATION LIVE IN MAILERLITE — enabled pending Board sign-off + HTML body entry in dashboard  
 **MailerLite account:** 2271322 | Form: 184855632701032232  
-**Trigger:** Newsletter signup on stayatthecrossroads.com  
+**Automation ID:** 186277124364043274  
+**Trigger:** subscriber_joins_group → "Newsletter sign up" (group 184855710547314606)  
 **Cadence:** 3 emails — Day 0 (immediate), Day 3, Day 7  
 **Voice:** In-world only. Briar Thornheart (keeper) speaking directly. Zero Jason first-person phrasing.  
 **Genre framing:** Heartland Fantasy (NOT cozy fantasy) — use only if genre is named at all.
+**Chapter PDF:** `https://stayatthecrossroads.com/downloads/Crossroads-Inn-Sample.pdf` (combined 3-chapter PDF, commit 325a04a)  
+**Pre-order URL:** `https://stayatthecrossroads.com/preorder`
 
-> **What's not in this version:** Buy CTA in Email 3 uses a placeholder Amazon/KDP link — Board must fill in the real URL before the sequence goes live. Chapter download links are also placeholders pending Ben's PDF formatting on JAS-38.
+> **What's not in this version:** The automation structure, trigger, step chain, and email subject/preheader/plain-text are all set via API. **HTML body copy still needs to be entered manually in the MailerLite dashboard** — the MailerLite API does not support setting rich HTML content for automation emails programmatically. Use the copy below, paste into each email's editor in the ML dashboard. Do not enable the automation until HTML is entered and a test send is verified.
+>
+> Note: chapter PDF link resolves to the combined 3-chapter sample. All three emails link to the same PDF; the drip pacing frames which chapter to read, not access control.
 
 ---
 
@@ -24,7 +29,7 @@ That's how it is at this crossroads. The inn doesn't wait for you to knock. If y
 
 Chapter 1 of *The Crossroads Inn* is below — it's called "The Unusual Day." Set aside a little time before you start. Not because it requires it. Just because the inn has that effect on most people.
 
-**[Read Chapter 1: The Unusual Day →]**
+**[Read Chapter 1: The Unusual Day →](https://stayatthecrossroads.com/downloads/Crossroads-Inn-Sample.pdf)**
 
 If you came through the Prologue before you signed up, you already know the way in. If not, the front door is still open:  
 → [stayatthecrossroads.com/the-prologue](https://stayatthecrossroads.com/the-prologue)
@@ -50,7 +55,7 @@ The inn keeps things like that. Objects that outlast their owners. Stories that 
 
 Your next chapter has been waiting the same way. Chapter 2 — "The Mobile Terrain" — is below.
 
-**[Read Chapter 2: The Mobile Terrain →]**
+**[Read Chapter 2: The Mobile Terrain →](https://stayatthecrossroads.com/downloads/Crossroads-Inn-Sample.pdf)**
 
 — B. Thornheart, Keeper
 
@@ -73,14 +78,11 @@ A note the keeper left in the margin of the ledger, undated:
 
 The third chapter — "Link to the Antagonist" — is below.
 
-**[Read Chapter 3: Link to the Antagonist →]**
+**[Read Chapter 3: Link to the Antagonist →](https://stayatthecrossroads.com/downloads/Crossroads-Inn-Sample.pdf)**
 
 If you want to know what happens next, the full story is in *The Crossroads Inn* — the keeper's account, from the beginning to the end.
 
-**[⚠ PLACEHOLDER — Board to fill in before go-live]**  
-`[The Crossroads Inn — available on Amazon →]`  
-*OR if pre-order is live:*  
-`[The Crossroads Inn launches [DATE] — pre-order now →]`
+**[The Crossroads Inn — read more →](https://stayatthecrossroads.com/preorder)**
 
 Whatever you decide: the fire is still lit. The door is still open.
 
@@ -101,37 +103,32 @@ Board to confirm segmentation approach before automation goes live.
 
 ---
 
-## MailerLite automation spec (Board-executable)
+## MailerLite automation — current state
 
-Account: 2271322 | Form: 184855632701032232  
-This can be built manually in the MailerLite dashboard or via API once a `MAILERLITE_API_KEY` is available.
+**Automation ID:** 186277124364043274  
+**Account:** 2271322  
+**Dashboard:** https://dashboard.mailerlite.com/automations/186277124364043274  
 
-### Automation steps
+### What is built via API (done)
 
-1. **Trigger:** Subscriber joins group linked to form 184855632701032232 (signup on stayatthecrossroads.com)
-2. **Email 1** — send immediately (Day 0)
-   - Subject: "Your chapter is by the fire"
-   - Preview: "Five roads meet here. You found the right one."
-   - Body: see Email 1 above
-3. **Wait:** 3 days
-4. **Email 2** — send on Day 3
-   - Subject: "Something moved on the eastern road"
-   - Preview: "Chapter 2 is inside, whenever you're ready."
-   - Body: see Email 2 above
-5. **Wait:** 4 days (7 days total from signup)
-6. **Email 3** — send on Day 7
-   - Subject: "The third chapter — and then the door stays open"
-   - Preview: "And if you want to know what comes next —"
-   - Body: see Email 3 above (fill in Amazon link before activating)
-7. **On completion:** tag subscriber `welcome_complete`, add to main Hearth list/group
+| Step | ID | Status |
+|------|-----|--------|
+| Trigger: subscriber_joins_group → "Newsletter sign up" | 186277389015189218 | ✓ complete |
+| Email 1 — "Your chapter is by the fire" (Day 0) | 186277169081615964 | ✓ subject/preheader set |
+| Delay — 3 days | 186277317938513778 | ✓ configured |
+| Email 2 — "Something moved on the eastern road" (Day 3) | 186277326013597638 | ✓ subject/preheader set |
+| Delay — 4 days | 186277344633161391 | ✓ configured |
+| Email 3 — "The third chapter…" (Day 7) | 186277351097632692 | ✓ subject/preheader set |
 
-### Before activating
+### What still needs manual entry in the ML dashboard
 
-- [ ] Board: provide `MAILERLITE_API_KEY` (or set up automation manually in dashboard)
-- [ ] Ben/JAS-38: chapter download links — PDFs must exist before emails go live
-- [ ] Board/CEO: fill in Amazon/KDP URL (or pre-order URL + launch date) in Email 3
-- [ ] EIC: voice approval on all 3 emails
-- [ ] Test: submit a test email, verify all 3 arrive at correct cadence
+The MailerLite API does not support setting rich HTML email body content for automation emails programmatically. For each email step, open the ML dashboard, click into the email, and paste the HTML body from this document.
+
+### Before enabling the automation
+
+- [ ] **Board:** enter HTML body copy for all 3 emails in ML dashboard (see body copy above)
+- [ ] **Board/Tess:** submit a test-subscriber email, verify all 3 arrive at correct cadence
+- [ ] **Board:** enable the automation (currently disabled)
 
 ---
 
@@ -142,6 +139,6 @@ This can be built manually in the MailerLite dashboard or via API once a `MAILER
 - Genre never explicitly named in body copy (atmosphere carries it).
 - No hard sell. Email 3 CTA is offered, not pushed.
 - Spoiler-free.
-- Chapter download links are placeholders — live links depend on JAS-38 (Ben, PDF formatting).
-- Amazon/KDP buy link in Email 3 is a placeholder — Board to fill in before activation.
+- Chapter PDF links all point to the combined 3-chapter sample: `stayatthecrossroads.com/downloads/Crossroads-Inn-Sample.pdf` (JAS-38, commit 325a04a). All three emails link to the same PDF; each email frames which chapter to open, not access control.
+- Email 3 buy CTA links to `stayatthecrossroads.com/preorder` per Board directive 2026-05-01.
 - Footer / unsubscribe / legal copy is ML platform standard — in-world voice exemption applies.
