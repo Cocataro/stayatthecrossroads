@@ -1,6 +1,6 @@
 # Welcome Email Sequence v2 — The Crossroads Inn
 
-**Status:** BLOCKED — email steps missing, domain validation issue prevents API recreation. Board must add steps via dashboard.  
+**Status:** BLOCKED — email steps missing. Domain validation blocks API recreation. Board must act (Option A or B below).  
 **MailerLite account:** 2271322 | Form: 184855632701032232  
 **Automation ID:** 186277124364043274  
 **Trigger:** subscriber_joins_group → "Newsletter sign up" (group 184855710547314606) — ✓ intact  
@@ -10,7 +10,13 @@
 **Chapter PDF:** `https://stayatthecrossroads.com/downloads/Crossroads-Inn-Sample.pdf` (combined 3-chapter PDF, commit 325a04a)  
 **Pre-order URL:** `https://stayatthecrossroads.com/preorder`
 
-> **Current automation state (2026-05-01):** Trigger is intact and wired to the signup form. Two delay steps remain (3-day delay, 4-day delay). All 3 email steps are missing — deleted during dashboard editing and API cleanup attempts. The MailerLite API now rejects new email step creation with `jasonkrebsbooks@outlook.com` (requires a verified custom sending domain). Board must add the 3 email steps manually in the dashboard using the copy below.
+> **Current automation state (2026-05-01, verified this session):** Trigger is intact and wired to the signup form. Two delay steps remain (3-day delay, 4-day delay). All 3 email steps are missing.
+>
+> **Domain restriction confirmed:** Email step shells can be created via API, but cannot be configured (from/subject/content) because:
+> - `jasonkrebsbooks@outlook.com` → hard blocked: "Campaigns cannot be sent from this domain. Please use an authenticated custom business domain."
+> - `hello@stayatthecrossroads.com` → blocked: "Sender email must be verified/authenticated." (domain_auth: false on account)
+>
+> Both from-address options are blocked until Board verifies `stayatthecrossroads.com` in ML (Option A) or adds the email steps manually in the dashboard (Option B).
 >
 > Note: chapter PDF link resolves to the combined 3-chapter sample. All three emails link to the same PDF; the drip pacing frames which chapter to read, not access control.
 
@@ -109,20 +115,25 @@ Board to confirm segmentation approach before automation goes live.
 **Account:** 2271322  
 **Dashboard:** https://dashboard.mailerlite.com/automations/186277124364043274  
 
-### Current automation state (2026-05-01)
+### Current automation state (verified 2026-05-01)
 
 | Component | ID | Status |
 |-----------|-----|--------|
 | Trigger: subscriber_joins_group → "Newsletter sign up" | 186277389015189218 | ✓ complete |
-| Delay — 3 days | 186277317938513778 | ✓ configured (floating, needs Email 1 as parent) |
-| Delay — 4 days | 186277344633161391 | ✓ configured (parent = Delay 1) |
-| Email 1 — "Your chapter is by the fire" (Day 0) | **MISSING** | ✗ deleted — must be recreated |
-| Email 2 — "Something moved on the eastern road" (Day 3) | **MISSING** | ✗ deleted — must be recreated |
-| Email 3 — "The third chapter…" (Day 7) | **MISSING** | ✗ deleted — must be recreated |
+| Delay — 3 days | 186277317938513778 | ✓ configured (floating — needs Email 1 as parent once Email 1 exists) |
+| Delay — 4 days | 186277344633161391 | ✓ configured (parent = Delay 3) |
+| Email 1 — "Your chapter is by the fire" (Day 0) | **MISSING** | ✗ must be added via dashboard (Option B) or API after domain verification (Option A) |
+| Email 2 — "Something moved on the eastern road" (Day 3) | **MISSING** | ✗ same |
+| Email 3 — "The third chapter…" (Day 7) | **MISSING** | ✗ same |
 
-### Why API cannot recreate email steps
+### Why API cannot configure email steps (verified this session)
 
-MailerLite's API now rejects email step creation with `jasonkrebsbooks@outlook.com` as the from address: "Campaigns cannot be sent from this domain. Please use an authenticated custom business domain." This is a platform policy change — free email provider domains are blocked. The existing trigger and delay steps are grandfathered, but new email steps cannot be created via API with the current account email.
+- Shell step creation via POST works
+- PUT to configure (set from/subject/content) is blocked by ML domain policy:
+  - `jasonkrebsbooks@outlook.com`: hard blocked — free email provider, ML requires custom business domain
+  - `hello@stayatthecrossroads.com`: blocked — domain not yet authenticated in ML (account `domain_auth: false`)
+- ML API does not support setting email body HTML for automation steps (drag-and-drop builder is dashboard-only)
+- Result: email steps can only be configured via dashboard, or via API once `stayatthecrossroads.com` is verified as a sending domain
 
 **Two paths forward:**
 
